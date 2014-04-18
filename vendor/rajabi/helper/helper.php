@@ -64,6 +64,37 @@ class RFunc
     {
         return unserialize(base64_decode($data));
     }
+
+    /**
+     * Get N level arrays to one array
+     * @param array $data
+     * @param $result
+     * @param array $ignoreKey
+     * @return array
+     */
+    public static function returnArraysRecursive(array $data, &$result, array $ignoreKey)
+    {
+        if (is_null($result)) $result = array();
+
+        foreach ($data as $key => $val) {
+
+            if (in_array($key, $ignoreKey))
+                continue;
+
+            if (is_string($key))
+                $result [$key] = 1;
+
+            if (is_bool($val))
+                continue;
+
+            if (!is_array($val)) {
+                $result [$val] = 1;
+            } else {
+                self::returnArraysRecursive($val, $result, $ignoreKey);
+            }
+        }
+        return $result;
+    }
 }
 
 /**
@@ -149,7 +180,6 @@ class RFile
      */
     public static function removeDir($path)
     {
-
 
         if (file_exists($path) && is_dir($path) && is_readable($path)) {
 

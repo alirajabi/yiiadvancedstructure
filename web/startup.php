@@ -15,16 +15,17 @@ define('ADMIN_FOLDER', WEB_FOLDER . DIRECTORY_SEPARATOR . 'management');
 define('MODULES_FOLDER', APP_FOLDER . DIRECTORY_SEPARATOR . 'modules');
 define('RESOURCES_FOLDER', WEB_FOLDER . DIRECTORY_SEPARATOR . 'resources');
 define('RUNTIME_FOLDER', APP_FOLDER . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'runtime');
+define('PUBLIC_FOLDER', WEB_FOLDER . DIRECTORY_SEPARATOR . 'public');
+define('AE_SEPARATOR', '_');
 
 
 // Define EMAIL INFORMATION
-define('ADMIN_EMAIL', 'rajabi000@gmail.com');
+define('ADMIN_EMAIL', 'webmaster@alirajabi.com');
 // Set Time Zone
 date_default_timezone_set('Asia/Tehran');
 
 //Load Programmer Helper
 require_once(VENDOR_FOLDER . DIRECTORY_SEPARATOR . 'rajabi' . DIRECTORY_SEPARATOR . 'helper' . DIRECTORY_SEPARATOR . 'helper.php');
-use \rajabi\helper\RFunc as RFunc;
 use \rajabi\helper\RFile as RFile;
 use \rajabi\helper\RFileCache as RFileCache;
 use \rajabi\helper\RException as RException;
@@ -58,7 +59,7 @@ $environment->setModuleConfig($modulesConfig);
 RFile::makeDir(RESOURCES_FOLDER);
 RFile::makeDir(RUNTIME_FOLDER);
 RFile::makeDir(RUNTIME_FOLDER . DS . 'session');
-RFile::writeFile(RUNTIME_FOLDER . DS . '.htaccess', "deny from all\n");
+RFile::writeFile(RUNTIME_FOLDER . DS . '.htaccess', "deny from all\n", TRUE);
 RFile::makeDir(WEB_FOLDER . DS . 'assets');
 RFile::makeDir(ADMIN_FOLDER . DS . 'assets');
 

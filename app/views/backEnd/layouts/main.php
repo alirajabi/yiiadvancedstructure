@@ -6,16 +6,20 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="language" content="<?= $tmpLang ?>"/>
-    <link rel="stylesheet" type="text/css" href="<?= baseUrl() ?>/public/css/screen.css"
+    <link rel="stylesheet" type="text/css" href="<?= baseUrl() ?>/../public/admin/css/screen.css"
           media="screen, projection"/>
-    <link rel="stylesheet" type="text/css" href="<?= baseUrl() ?>/public/css/print.css"
+    <link rel="stylesheet" type="text/css" href="<?= baseUrl() ?>/../public/admin/css/print.css"
           media="print"/>
     <!--[if lt IE 8]>
-    <link rel="stylesheet" type="text/css" href="<?=baseUrl()?>/public/css/ie.css"
+    <link rel="stylesheet" type="text/css" href="<?= baseUrl() ?>/../public/admin/css/admin/ie.css"
           media="screen, projection"/>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="<?= baseUrl() ?>/public/css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="<?= baseUrl() ?>/public/css/form.css"/>
+    <link rel="stylesheet" type="text/css" href="<?= baseUrl() ?>/../public/admin/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="<?= baseUrl() ?>/../public/admin/css/form.css"/>
+    <?php
+    clientScript()->registerCoreScript('jquery');
+    clientScript()->registerScriptFile(app()->assetManager->publish(PUBLIC_FOLDER . DS . 'admin' . DS . 'js' . DS . 'public.js'), CClientScript::POS_HEAD);
+    ?>
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 <body>
@@ -40,8 +44,8 @@
     <!-- mainmenu -->
     <?php if (isset($this->breadcrumbs)): ?>
         <?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
+            'links' => $this->breadcrumbs,
+        )); ?><!-- breadcrumbs -->
     <?php endif ?>
 
     <?php echo $content; ?>

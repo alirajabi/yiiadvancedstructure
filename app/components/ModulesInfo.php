@@ -20,7 +20,7 @@ class ModulesInfo extends CComponent
      */
     public function init()
     {
-        if (FALSE === $this->_modulesInfo = cache()->get('modulesInfo')) {
+        if (FALSE == $this->_modulesInfo = app()->cache->get('modulesInfo')) {
             $modules = RFile::getDirectories(MODULES_FOLDER);
             if ($modules) {
                 foreach ($modules as $module) {
@@ -39,7 +39,7 @@ class ModulesInfo extends CComponent
                 RException::trace();
 
             } else {
-                cache()->set('modulesInfo', $this->_modulesInfo);
+                app()->cache->set('modulesInfo', $this->_modulesInfo);
             }
         }
 

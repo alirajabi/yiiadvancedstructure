@@ -16,15 +16,6 @@ function app()
 }
 
 /**
- * @return mixed
- * This is the shortcut to Yii::app()->db
- */
-function db()
-{
-    return Yii::app()->db;
-}
-
-/**
  * This is the shortcut to Yii::app()->clientScript
  */
 function clientScript()
@@ -84,7 +75,6 @@ function removeSession($key)
     return Yii::app()->getSession()->remove($key);
 }
 
-
 /**
  * This is the shortcut to Yii::t() with default category = 'stay'
  */
@@ -114,13 +104,4 @@ function baseUrl($url = null)
 function param($name)
 {
     return Yii::app()->params[$name];
-}
-
-/**
- * shortcut Yii::app()->cache
- * @return mixed
- */
-function cache()
-{
-    return Yii::app()->cache;
 }

@@ -11,11 +11,4 @@ class FrontController extends Controller
 
     public $layout = '//layouts/column2';
 
-
-    public function init()
-    {
-        if (!defined('PUBLIC_FOLDER'))
-            define('PUBLIC_FOLDER', baseUrl() . DS . 'public');
-        parent::init();
-    }
 }

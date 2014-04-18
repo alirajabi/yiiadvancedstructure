@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Ali Rajabi - www.alirajabi.com
@@ -86,6 +87,25 @@ class Environment
                 ),
                 'modulesInfo' => array(
                     'class' => 'application.components.ModulesInfo',
+                ),
+                'mail' => array(
+                    'class' => 'application.components.SwiftMailer',
+                    'logTable' => 'mailer_log',
+                    'log' => true,
+                    'charset' => 'utf-8',
+                    'defaultFrom' => array(
+                        'webmaster@alirajabi.com' => 'Ali Rajabi'
+                    ),
+                    'defaultTo' => array(
+                        'webmaster@alirajabi.com' => 'Ali Rajabi'
+                    ),
+                    'transport' => 'smtp',
+                    'sendMailCommand' => '/usr/sbin/sendmail -bs',
+                    'smtpHost' => 'smtp.gmail.com',
+                    'smtpPort' => 465,
+                    'smtpEncryption' => 'ssl',
+                    'smtpUsername' => '',
+                    'smtpPassword' => '',
                 ),
             ),
             // application-level parameters that can be accessed

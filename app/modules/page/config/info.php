@@ -9,16 +9,16 @@ return array(
     'name' => 'page',
     'language' => array('en', 'fa'),
     'sections' => array(
-        'controllers' => array(
-            'main' => array(
-                'frontEnd' => array(
+        'frontEnd' => array(
+            'controllers' => array(
+                'main' => array(
                     'index'
+
                 )
-            )
+            ),
         ),
         'backEnd' => array(
             'controllers' => array(
-
                 'main' => array(
                     'index',
                 )
