@@ -1,0 +1,24 @@
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `module` varchar(12) NOT NULL,
+  `title` varchar(32) NOT NULL,
+  `statement` varchar(255) DEFAULT NULL,
+  `description` text,
+  `default_image` varchar(45) DEFAULT NULL,
+  `level` tinyint(3) NOT NULL,
+  `category_left` int(11) NOT NULL,
+  `category_right` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL,
+  `cDate` int(11) NOT NULL,
+  `lang` varchar(4) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `lang` (`lang`),
+  KEY `active` (`active`),
+  KEY `module` (`module`),
+  KEY `category_left` (`category_left`),
+  KEY `category_right` (`category_right`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
