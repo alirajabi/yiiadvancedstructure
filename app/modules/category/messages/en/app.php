@@ -8,7 +8,7 @@
 return array(
     'level' => 'Level',
     'parent' => 'Category',
-    'opMainIndex' => 'Categires Index',
+    'opMainIndex' => 'Categories Index',
     'opMainCreate' => 'New Category',
     'opMainUpdate' => 'Update Category',
     'opMainDelete' => 'Delete Category'

@@ -63,21 +63,24 @@ class Environment
                     'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
                 ),*/
                 // uncomment the following to use a MySQL database
-                /*
+/*
                                 'db' => array(
-                                    'connectionString' => 'mysql:host=localhost;dbname=profile',
+                                    'connectionString' => 'mysql:host=localhost;dbname=yii',
                                     'emulatePrepare' => true,
                                     'username' => 'root',
-                                    'password' => 'websepanta',
+                                    'password' => '',
                                     'charset' => 'utf8',
                                     'schemaCachingDuration' => 2,
                         'enableProfiling'=>true,
         'enableParamLogging'=>true,
                                 ),
-                */
+*/
                 'errorHandler' => array(
                     // use 'default/error' action to display errors
                     'errorAction' => 'default/error',
+                ),
+                'cache' => array(
+                    'class' => 'CFileCache'
                 ),
                 //Set Xss Filter
                 'input' => array(

@@ -46,19 +46,7 @@
         <?php echo $form->dropDownList($model, 'active', array('1' => t('app', 'active'), '0' => t('app', 'inActive')), array('separator' => null)); ?>
         <?php echo $form->error($model, 'active'); ?>
     </div>
-    <div class="row">
-        <?php $this->widget('application.widgets.MetaWidget', array('refModule' => APP_MODULE, 'refModel' => $model)) ?>
-    </div>
-    <div class="row">
 
-        <?php $this->widget('application.widgets.AttachmentJUIWidget', array(
-            'refModule' => APP_MODULE,
-            'refModel' => $model,
-            'refParams' => array(
-                array('name' => 'defaultImage', 'limit' => 1),
-            )
-        ))?>
-    </div>
     <div class="row buttons">
         <?php echo CHtml::submitButton($model->isNewRecord ? t('app', 'create') : t('app', 'save')); ?>
     </div>
