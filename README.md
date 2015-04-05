@@ -1,4 +1,4 @@
 # yiiadvancestructure
 ===================
 
-Yii 1.1 App Advanced Struction
+Yii 1.1 App Advanced Structure
